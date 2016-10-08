@@ -21,7 +21,7 @@ public class torturing : MonoBehaviour {
         if (onOff && desu == 1)
         {
             onOff = false;
-            gamemode.GetComponent<setHealth>().HealthMinus(1);
+            gamemode.GetComponent<GameManager>().HealthMinus(1);
         }
     }
 

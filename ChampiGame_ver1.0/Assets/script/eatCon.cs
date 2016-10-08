@@ -18,7 +18,7 @@ public class eatCon : MonoBehaviour {
         if (other.gameObject.CompareTag("eat"))
         {
             getConfeito.instance.numOfConfeito--;
-            setHealth.instance.HealthPlus(1);
+            GameManager.instance.HealthPlus(1);
             Destroy(this.gameObject);
         }
     }
