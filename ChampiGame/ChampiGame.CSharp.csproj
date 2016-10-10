@@ -113,6 +113,8 @@
     <Compile Include="Assets\script\LevelManager.cs" />
     <Compile Include="Assets\script\SkinSelector.cs" />
     <Compile Include="Assets\script\TutorialManager.cs" />
+    <Compile Include="Assets\script\UjichaController.cs" />
+    <Compile Include="Assets\script\UjichaSetter.cs" />
     <Compile Include="Assets\script\buttonDisable.cs" />
     <Compile Include="Assets\script\buttonDisableInven.cs" />
     <Compile Include="Assets\script\countInvenNum.cs" />
@@ -126,11 +128,13 @@
     <Compile Include="Assets\script\setConfeito2.cs" />
     <Compile Include="Assets\script\setHealth.cs" />
     <Compile Include="Assets\script\shopManager.cs" />
+    <Compile Include="Assets\script\showAccessory.cs" />
     <Compile Include="Assets\script\showShopInfo.cs" />
     <Compile Include="Assets\script\temp.cs" />
     <Compile Include="Assets\script\textLookat.cs" />
     <Compile Include="Assets\script\torturing.cs" />
     <Compile Include="Assets\script\tutorialAnim.cs" />
+    <Compile Include="Assets\script\ujichaAnimator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />

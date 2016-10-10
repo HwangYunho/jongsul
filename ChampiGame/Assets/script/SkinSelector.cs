@@ -4,6 +4,8 @@ using System.Collections;
 
 public class SkinSelector : MonoBehaviour {
 
+    public static SkinSelector instance;
+
     public int currentSkin;
     public Transform popup;
     public Text nameText;
@@ -12,10 +14,12 @@ public class SkinSelector : MonoBehaviour {
 
     public Material midori, pink;
 
-	// Use this for initialization
-	void Start () {
+    public Material hollyred, hollyblue,hollywhite, hollyhair;
+
+    // Use this for initialization
+    void Start () {
+        instance = this;
         currentSkin = 0;
-        getskin1();
 	}
 	
 	// Update is called once per frame
@@ -48,7 +52,7 @@ public class SkinSelector : MonoBehaviour {
                 getskin1();
                 break;
             case 2:
-                getskin1();
+                getskin2();
                 break;
         }
         popup.gameObject.SetActive(false);
@@ -66,6 +70,8 @@ public class SkinSelector : MonoBehaviour {
         rightarm.transform.GetComponent<Renderer>().material = midori;
         leftleg.transform.GetComponent<Renderer>().material = midori;
         rightleg.transform.GetComponent<Renderer>().material = midori;
+        GameManager.instance.skin = 0;
+        currentSkin = 0;
     }
     public void getskin1()
     {//95c597
@@ -79,18 +85,22 @@ public class SkinSelector : MonoBehaviour {
         rightarm.transform.GetComponent<Renderer>().material = pink;
         leftleg.transform.GetComponent<Renderer>().material = pink;
         rightleg.transform.GetComponent<Renderer>().material = pink;
+        GameManager.instance.skin = 1;
+        currentSkin = 1;
     }
     public void getskin2()
     {//할리퀸
-        hood.transform.GetComponent<Renderer>().material = pink;
-        hoodear1.transform.GetComponent<Renderer>().material = pink;
-        hoodear2.transform.GetComponent<Renderer>().material = pink;
-        dress1.transform.GetComponent<Renderer>().material = pink;
-        dress2.transform.GetComponent<Renderer>().material = pink;
-        dress3.transform.GetComponent<Renderer>().material = pink;
-        leftarm.transform.GetComponent<Renderer>().material = pink;
-        rightarm.transform.GetComponent<Renderer>().material = pink;
-        leftleg.transform.GetComponent<Renderer>().material = pink;
-        rightleg.transform.GetComponent<Renderer>().material = pink;
+        hood.transform.GetComponent<Renderer>().material = hollyhair;
+        hoodear1.transform.GetComponent<Renderer>().material = hollyblue;
+        hoodear2.transform.GetComponent<Renderer>().material = hollyred;
+        dress1.transform.GetComponent<Renderer>().material = hollyred;
+        dress2.transform.GetComponent<Renderer>().material = hollywhite;
+        dress3.transform.GetComponent<Renderer>().material = hollywhite;
+        leftarm.transform.GetComponent<Renderer>().material = hollyblue;
+        rightarm.transform.GetComponent<Renderer>().material = hollyred;
+        leftleg.transform.GetComponent<Renderer>().material = hollyred;
+        rightleg.transform.GetComponent<Renderer>().material = hollyblue;
+        GameManager.instance.skin = 2;
+        currentSkin = 2;
     }
 }

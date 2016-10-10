@@ -5,6 +5,7 @@ public class setConfeito2 : MonoBehaviour
 {
     public GameObject confeito;
     public GameObject gamemode;
+    public GameObject champigame;
     private int desu;
 
 	// Use this for initialization

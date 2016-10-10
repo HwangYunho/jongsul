@@ -3,9 +3,11 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
+    public float hungerTimer = 10;
+
     private int level;
 
-    public int[] inven = new int[3];
+    public int[] inven = new int[32];
 
     public int point;
 
@@ -18,7 +20,7 @@ public class GameManager : MonoBehaviour {
 
 
 
-    public int health, hunger, closeness, cocky;
+    public int health, hunger, closeness, cocky, skin;
     public static GameManager instance;
 
     public bool Dokra;
@@ -29,12 +31,13 @@ public class GameManager : MonoBehaviour {
     public Text healthText, hungerText, closenessText, cockyText, nameText, DokraText, UjiText;
     public Text pointText, pointTextInven;
 
-    public item i = itemDB.itemlist[0];
+    //public item i = itemDB.itemlist[0];
 
 
     // Use this for initialization
     void Start()
     {
+        hungerTimer = 10;
         Dokra = false;
         instance = this;
         health = 70;
@@ -42,6 +45,7 @@ public class GameManager : MonoBehaviour {
         closeness = 50;
         cocky = 50;
         point = 1000;
+        skin = 0;
         level = PlayerPrefs.GetInt("Level");
         name = PlayerPrefs.GetString("Name");
 
@@ -54,7 +58,8 @@ public class GameManager : MonoBehaviour {
             PlayerPrefs.SetInt("Close", closeness);
             PlayerPrefs.SetInt("Cock", cocky);
             PlayerPrefs.SetInt("Point", point);
-            for (int i = 0; i < 3; i++)
+            PlayerPrefs.SetInt("Skin", skin);
+            for (int i = 0; i < 32; i++)
             {
                 PlayerPrefs.SetInt("Inven" + i.ToString(), inven[i]);
             }
@@ -66,7 +71,13 @@ public class GameManager : MonoBehaviour {
             closeness = PlayerPrefs.GetInt("Close");
             cocky = PlayerPrefs.GetInt("Cock");
             point = PlayerPrefs.GetInt("Point");
-            for (int i = 0; i < 3; i++)
+
+
+            skin = PlayerPrefs.GetInt("Skin");
+            SkinSelector.instance.currentSkin = skin;
+            GetComponent<SkinSelector>().selectSkin();
+
+            for (int i = 0; i < 32; i++)
             {
                 inven[i] = PlayerPrefs.GetInt("Inven" + i.ToString());
             }
@@ -119,6 +130,7 @@ public class GameManager : MonoBehaviour {
         PlayerPrefs.SetInt("Close", closeness);
         PlayerPrefs.SetInt("Cock", cocky);
         PlayerPrefs.SetInt("Point", point);
+        PlayerPrefs.SetInt("Skin", skin);
         for (int i=0;i<3;i++)
         {
             PlayerPrefs.SetInt("Inven" + i.ToString(), inven[i]);
@@ -146,6 +158,12 @@ public class GameManager : MonoBehaviour {
     }
     public void mainmenu()
     {
+        mainMenu.gameObject.SetActive(b);
+        b = !b;
+    }
+    public void mainmenuClose()
+    {
+        b = false;
         mainMenu.gameObject.SetActive(b);
         b = !b;
     }
