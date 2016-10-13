@@ -7,9 +7,6 @@ public class torturing : MonoBehaviour {
     private bool uncheck = true;
     public GameObject champi;
     public GameObject gamemode;
-
-    public GameObject hitParticle;
-
     private int desu;
 
     void Start()
@@ -24,15 +21,13 @@ public class torturing : MonoBehaviour {
         if (onOff && desu == 1)
         {
             onOff = false;
-            Instantiate(hitParticle, this.transform.position + new Vector3(0,1f,0), this.transform.rotation);
-            champi.GetComponent<getConfeito>().HitInDesu();
-            gamemode.GetComponent<GameManager>().HealthMinus(1);
+            gamemode.GetComponent<setHealth>().HealthMinus(1);
         }
     }
 
     void OnMouseDown()
     {
-        if (!onOff&&desu==1 && !champi.GetComponent<getConfeito>().ruhit && champi.GetComponent<getConfeito>().cooltime < 0)
+        if (!onOff&&desu==1)
             onOff = true;
     }
 }

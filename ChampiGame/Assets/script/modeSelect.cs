@@ -14,14 +14,14 @@ public class modeSelect : MonoBehaviour {
     public GameObject imagetarget;
     public GameObject gametarget;
 
-    //public Transform temp;
+    public Transform temp;
 
     // Use this for initialization
     void Start () {
         gameMode = 0;
         floorMode = true;
         HideMode = true;
-        //temp.gameObject.transform.position = gametarget.gameObject.transform.position;
+        temp.gameObject.transform.position = gametarget.gameObject.transform.position;
     }
 	
 	// Update is called once per frame

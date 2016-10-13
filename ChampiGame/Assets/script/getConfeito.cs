@@ -5,9 +5,6 @@ using UnityEngine.UI;
 public class getConfeito : MonoBehaviour
 {
     public Animator Anim;
-    public float cooltime = 1;
-    public bool ruhit = false;
-    public bool rudead = false;
 
     public int numOfConfeito = 0;
     public float speed = 0.5f;
@@ -28,12 +25,12 @@ public class getConfeito : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-        cooltime -= Time.deltaTime;
+
         /*if (Input.GetButtonDown("Fire2"))
         {
             this.transform.position = getNearist().transform.position;
         }*/
-        if (numOfConfeito > 0 && !ruhit && !rudead)
+        if (numOfConfeito > 0)
         {
             target = getNearist().transform.position;
             target.y = transform.position.y;
@@ -64,26 +61,5 @@ public class getConfeito : MonoBehaviour
     public void DokraInDesu()
     {
         Anim.SetBool("dok", true);
-    }
-
-    public void HitInDesu()
-    {
-        if(cooltime < 0 && !ruhit)
-        {
-            ruhit = true;
-            Anim.SetBool("hit", true);
-        }
-    }
-    public void Hitover()
-    {
-        cooltime = 1;
-        ruhit = false;
-        Anim.SetBool("hit", false);
-    }
-
-    public void pakin()
-    {
-        rudead = true;
-        Anim.SetBool("dead", true);
     }
 }
