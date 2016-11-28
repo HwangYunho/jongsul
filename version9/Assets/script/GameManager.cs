@@ -147,7 +147,7 @@ public class GameManager : MonoBehaviour
 	{
 		
 		//ssc
-		if (health == 100) {
+		if (health == 40) {
 			ujija = (GameObject)Instantiate (
 				uji,
 				champi.transform.position,
