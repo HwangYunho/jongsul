@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChampiGame2.CSharp", "ChampiGame2.CSharp.csproj", "{C3A72DC6-FDE6-C772-825E-8B78ECBF3DD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChampiGame2.CSharp.Editor", "ChampiGame2.CSharp.Editor.csproj", "{081166CB-64D1-A824-E4C6-F82C5AA3B5A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3A72DC6-FDE6-C772-825E-8B78ECBF3DD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3A72DC6-FDE6-C772-825E-8B78ECBF3DD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3A72DC6-FDE6-C772-825E-8B78ECBF3DD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3A72DC6-FDE6-C772-825E-8B78ECBF3DD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{081166CB-64D1-A824-E4C6-F82C5AA3B5A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{081166CB-64D1-A824-E4C6-F82C5AA3B5A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{081166CB-64D1-A824-E4C6-F82C5AA3B5A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{081166CB-64D1-A824-E4C6-F82C5AA3B5A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
